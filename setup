@@ -1,0 +1,107 @@
+#!/usr/bin/env bash
+
+# SeaShells Theme Installation Script
+# This script installs the SeaShells theme files to ~/.config/omarchy/themes/
+
+set -e
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+# Configuration
+REPO_URL="https://raw.githubusercontent.com/odysseyalive/omarchy-seashells-theme/main"
+TARGET_DIR="${HOME}/.config/omarchy/themes"
+THEMES=("seashells" "seashells-light")
+
+# Theme files to download
+THEME_FILES=(
+    "alacritty.toml"
+    "btop.theme"
+    "chromium.theme"
+    "ghostty.conf"
+    "hyprland.conf"
+    "hyprlock.conf"
+    "icons.theme"
+    "kitty.conf"
+    "mako.ini"
+    "neovim.lua"
+    "swayosd.css"
+    "vscode.json"
+    "walker.css"
+    "waybar.css"
+)
+
+echo -e "${GREEN}╔════════════════════════════════════════╗${NC}"
+echo -e "${GREEN}║  SeaShells Theme Installation Script  ║${NC}"
+echo -e "${GREEN}╔════════════════════════════════════════╗${NC}"
+echo ""
+
+# Create target directory if it doesn't exist
+if [ ! -d "$TARGET_DIR" ]; then
+    echo -e "${YELLOW}Creating directory: ${TARGET_DIR}${NC}"
+    mkdir -p "$TARGET_DIR"
+fi
+
+# Function to download a file
+download_file() {
+    local theme=$1
+    local file=$2
+    local url="${REPO_URL}/omarchy/themes/${theme}/${file}"
+    local target="${TARGET_DIR}/${theme}/${file}"
+
+    if curl -fsSL "$url" -o "$target" 2>/dev/null; then
+        echo -e "  ${GREEN}✓${NC} ${file}"
+        return 0
+    else
+        echo -e "  ${RED}✗${NC} ${file} (failed to download)"
+        return 1
+    fi
+}
+
+# Install each theme
+for theme in "${THEMES[@]}"; do
+    echo ""
+    echo -e "${YELLOW}Installing ${theme} theme...${NC}"
+
+    # Create theme directory
+    theme_dir="${TARGET_DIR}/${theme}"
+    mkdir -p "$theme_dir"
+
+    # Create backgrounds subdirectory
+    mkdir -p "${theme_dir}/backgrounds"
+
+    # Download each theme file
+    success_count=0
+    fail_count=0
+
+    for file in "${THEME_FILES[@]}"; do
+        if download_file "$theme" "$file"; then
+            ((success_count++))
+        else
+            ((fail_count++))
+        fi
+    done
+
+    echo -e "  Downloaded: ${success_count}/${#THEME_FILES[@]} files"
+
+    if [ $fail_count -gt 0 ]; then
+        echo -e "  ${YELLOW}Warning: ${fail_count} file(s) failed to download${NC}"
+    fi
+done
+
+echo ""
+echo -e "${GREEN}╔════════════════════════════════════════╗${NC}"
+echo -e "${GREEN}║        Installation Complete!          ║${NC}"
+echo -e "${GREEN}╔════════════════════════════════════════╗${NC}"
+echo ""
+echo -e "Themes installed to: ${GREEN}${TARGET_DIR}${NC}"
+echo ""
+echo -e "Available themes:"
+echo -e "  • ${YELLOW}seashells${NC} (dark theme)"
+echo -e "  • ${YELLOW}seashells-light${NC} (light theme)"
+echo ""
+echo -e "To use these themes, copy or symlink the relevant files to your application config directories."
+echo ""
