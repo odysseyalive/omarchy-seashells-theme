@@ -87,18 +87,18 @@ download_backgrounds() {
                 "seashells")
                     if [ $i -eq 1 ]; then
                         if download_file "$theme" "1-chimney-rock.jpg" "backgrounds/"; then
-                            ((bg_count++))
+                            ((bg_count++)) || true
                         else
-                            ((bg_fail++))
+                            ((bg_fail++)) || true
                         fi
                     fi
                     ;;
                 "seashells-light")
                     if [ $i -eq 1 ]; then
                         if download_file "$theme" "1-rainbow-river.jpg" "backgrounds/"; then
-                            ((bg_count++))
+                            ((bg_count++)) || true
                         else
-                            ((bg_fail++))
+                            ((bg_fail++)) || true
                         fi
                     fi
                     ;;
@@ -131,9 +131,9 @@ for theme in "${THEMES[@]}"; do
 
     for file in "${THEME_FILES[@]}"; do
         if download_file "$theme" "$file" ""; then
-            ((success_count++))
+            ((success_count++)) || true
         else
-            ((fail_count++))
+            ((fail_count++)) || true
         fi
     done
 
