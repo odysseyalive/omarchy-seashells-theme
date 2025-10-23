@@ -1,9 +1,12 @@
 return {
 	{
-		"vim",
-		priority = 1000,
+		"odysseyalive/kitty-themes.nvim",
 		config = function()
-			vim.cmd("source " .. vim.fn.stdpath("config") .. "/../../SeaShells.vim")
+			require("kitty-themes").setup({
+				-- Configuration options
+				transparent = false,
+				term_colors = true,
+			})
 		end,
 	},
 	{

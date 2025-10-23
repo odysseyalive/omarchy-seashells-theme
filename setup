@@ -49,16 +49,68 @@ fi
 download_file() {
     local theme=$1
     local file=$2
-    local url="${REPO_URL}/omarchy/themes/${theme}/${file}"
-    local target="${TARGET_DIR}/${theme}/${file}"
+    local subdir=$3
+    local url="${REPO_URL}/omarchy/themes/${theme}/${subdir}${file}"
+    local target="${TARGET_DIR}/${theme}/${subdir}${file}"
+
+    # Create subdirectory if needed
+    local target_dir=$(dirname "$target")
+    mkdir -p "$target_dir"
 
     if curl -fsSL "$url" -o "$target" 2>/dev/null; then
-        echo -e "  ${GREEN}✓${NC} ${file}"
+        echo -e "  ${GREEN}✓${NC} ${subdir}${file}"
         return 0
     else
-        echo -e "  ${RED}✗${NC} ${file} (failed to download)"
+        echo -e "  ${RED}✗${NC} ${subdir}${file} (failed to download)"
         return 1
     fi
+}
+
+# Function to download background images for a theme
+download_backgrounds() {
+    local theme=$1
+    local bg_count=0
+    local bg_fail=0
+
+    # Try to download background images (numbered 1-9)
+    for i in {1..9}; do
+        # Try both jpg and png extensions
+        for ext in jpg png; do
+            local bg_list_url="${REPO_URL}/omarchy/themes/${theme}/backgrounds/"
+
+            # Use GitHub API to list files in backgrounds directory
+            # For simplicity, we'll try downloading common numbered backgrounds
+            local bg_file="${i}-"
+
+            # We need to know the actual filenames. For now, hardcode known backgrounds
+            case "$theme" in
+                "seashells")
+                    if [ $i -eq 1 ]; then
+                        if download_file "$theme" "1-chimney-rock.jpg" "backgrounds/"; then
+                            ((bg_count++))
+                        else
+                            ((bg_fail++))
+                        fi
+                    fi
+                    ;;
+                "seashells-light")
+                    if [ $i -eq 1 ]; then
+                        if download_file "$theme" "1-rainbow-river.jpg" "backgrounds/"; then
+                            ((bg_count++))
+                        else
+                            ((bg_fail++))
+                        fi
+                    fi
+                    ;;
+            esac
+
+            # Only try first background
+            [ $i -gt 1 ] && break 2
+        done
+    done
+
+    echo -e "  Backgrounds: ${bg_count} downloaded"
+    return 0
 }
 
 # Install each theme
@@ -78,18 +130,21 @@ for theme in "${THEMES[@]}"; do
     fail_count=0
 
     for file in "${THEME_FILES[@]}"; do
-        if download_file "$theme" "$file"; then
+        if download_file "$theme" "$file" ""; then
             ((success_count++))
         else
             ((fail_count++))
         fi
     done
 
-    echo -e "  Downloaded: ${success_count}/${#THEME_FILES[@]} files"
+    echo -e "  Config files: ${success_count}/${#THEME_FILES[@]} downloaded"
 
     if [ $fail_count -gt 0 ]; then
         echo -e "  ${YELLOW}Warning: ${fail_count} file(s) failed to download${NC}"
     fi
+
+    # Download background images
+    download_backgrounds "$theme"
 done
 
 echo ""
