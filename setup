@@ -92,6 +92,7 @@ download_backgrounds() {
                         else
                             ((bg_fail++)) || true
                         fi
+                        break 2  # Exit both loops after downloading
                     fi
                     ;;
                 "seashells-light")
@@ -101,11 +102,12 @@ download_backgrounds() {
                         else
                             ((bg_fail++)) || true
                         fi
+                        break 2  # Exit both loops after downloading
                     fi
                     ;;
             esac
 
-            # Only try first background
+            # Exit loops if we've tried all backgrounds
             [ $i -gt 1 ] && break 2
         done
     done
