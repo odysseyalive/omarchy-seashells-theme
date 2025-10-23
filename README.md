@@ -16,6 +16,16 @@ The reports of boring terminal themes have been greatly exaggerated. SeaShells b
 - Dark text (`#2d3339`) - legible, which is more than can be said for most documentation
 - Ocean cyan accents (`#50a3b5`) - the one constant in an ever-changing world
 
+## Preview
+
+**SeaShells Dark:**
+
+![SeaShells Dark Theme](omarchy/themes/seashells/preview.png)
+
+**SeaShells Light:**
+
+![SeaShells Light Theme](omarchy/themes/seashells-light/preview.png)
+
 ## Supported Applications
 
 - **Terminal Emulators:** Alacritty, Kitty, Ghostty
