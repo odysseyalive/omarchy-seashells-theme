@@ -50,7 +50,8 @@ download_file() {
     local theme=$1
     local file=$2
     local subdir=$3
-    local url="${REPO_URL}/omarchy/themes/${theme}/${subdir}${file}"
+    # Add timestamp to bust GitHub's CDN cache
+    local url="${REPO_URL}/omarchy/themes/${theme}/${subdir}${file}?cache_bust=$(date +%s)"
     local target="${TARGET_DIR}/${theme}/${subdir}${file}"
 
     # Create subdirectory if needed
