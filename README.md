@@ -38,20 +38,15 @@ This will install the themes to `~/.config/omarchy/themes/` with both variants:
 
 ## Usage
 
-After installation, copy or symlink the relevant theme files to your application config directories. For example:
+After installation, activate the SeaShells theme using the Omarchy theme selector:
 
-```bash
-# Kitty terminal
-ln -sf ~/.config/omarchy/themes/seashells/kitty.conf ~/.config/kitty/themes/seashells.conf
+1. **Via Omarchy Menu:** Press `Super + Alt + Space`, then navigate to _Style > Theme_ and select either **seashells** or **seashells-light**
 
-# Alacritty
-ln -sf ~/.config/omarchy/themes/seashells/alacritty.toml ~/.config/alacritty/seashells.toml
+2. **Direct Shortcut:** Press `Super + Ctrl + Shift + Space` to jump straight to the theme selector
 
-# Waybar
-ln -sf ~/.config/omarchy/themes/seashells/waybar.css ~/.config/waybar/seashells.css
-```
+Once activated, the theme will be applied system-wide to all supported applications.
 
-Refer to each application's documentation for specific instructions on loading theme files.
+For more information about themes in Omarchy, see the [official manual](https://learn.omacom.io/2/the-omarchy-manual/52/themes).
 
 ## License
 
