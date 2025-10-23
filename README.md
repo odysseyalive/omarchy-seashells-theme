@@ -1,20 +1,20 @@
 # SeaShells Theme for Omarchy
 
-A beautiful, warm color theme collection for [Omarchy](https://omarchy.org) - the modern, opinionated Linux distribution by 37signals.
+A handsome collection of warm, ocean-inspired colors for [Omarchy](https://omarchy.org) - the opinionated Linux distribution that knows what it wants and isn't afraid to say so.
 
 ## Overview
 
-SeaShells is a carefully crafted color scheme featuring warm ocean-inspired tones with excellent readability. This repository provides theme configurations for all major applications and tools used in Omarchy, available in both dark and light variants.
+The reports of boring terminal themes have been greatly exaggerated. SeaShells brings the warmth of sun-soaked beaches and the depth of evening tides to your screen, with readability that won't require spectacles (though we make no promises about the code you're reading). Available in both dark and light variants, because sometimes the sun sets and sometimes it rises, and your eyes have opinions about both.
 
 **Dark Theme Colors:**
-- Deep ocean backgrounds (`#08131a`)
-- Warm sandy text (`#deb88d`)
-- Bright cyan accents (`#50a3b5`)
+- Deep ocean backgrounds (`#08131a`) - darker than a moonless night at sea
+- Warm sandy text (`#deb88d`) - the color of beaches you'll never visit because you're debugging
+- Bright cyan accents (`#50a3b5`) - tropical waters, without the sunburn
 
 **Light Theme Colors:**
-- Soft cream backgrounds (`#fef9f2`)
-- Dark text (`#2d3339`)
-- Ocean cyan accents (`#50a3b5`)
+- Soft cream backgrounds (`#fef9f2`) - gentle as morning fog
+- Dark text (`#2d3339`) - legible, which is more than can be said for most documentation
+- Ocean cyan accents (`#50a3b5`) - the one constant in an ever-changing world
 
 ## Supported Applications
 
@@ -26,27 +26,27 @@ SeaShells is a carefully crafted color scheme featuring warm ocean-inspired tone
 
 ## Installation
 
-Install both theme variants with a single command:
+The art of installation has been reduced to a single command, which is considerably less effort than most worthwhile endeavors:
 
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/odysseyalive/omarchy-seashells-theme/main/setup)"
 ```
 
-This will install the themes to `~/.config/omarchy/themes/` with both variants:
-- `seashells` (dark theme)
-- `seashells-light` (light theme)
+This deposits both theme variants into `~/.config/omarchy/themes/` faster than you can say "I should've read the documentation first":
+- `seashells` (dark theme) - for night owls and cave dwellers
+- `seashells-light` (light theme) - for morning people and optimists
 
 ## Usage
 
-After installation, activate the SeaShells theme using the Omarchy theme selector:
+Having installed the theme, you must now persuade your system to actually use it. Fortunately, Omarchy has thought of this:
 
-1. **Via Omarchy Menu:** Press `Super + Alt + Space`, then navigate to _Style > Theme_ and select either **seashells** or **seashells-light**
+1. **Via Omarchy Menu:** Press `Super + Alt + Space`, navigate to _Style > Theme_, and select your preferred variant. This is the scenic route.
 
-2. **Direct Shortcut:** Press `Super + Ctrl + Shift + Space` to jump straight to the theme selector
+2. **Direct Shortcut:** Press `Super + Ctrl + Shift + Space` if you're the impatient sort who skips to the last page of mystery novels.
 
-Once activated, the theme will be applied system-wide to all supported applications.
+The theme will then spread itself across all supported applications with the enthusiasm of paint on a fresh canvas. No additional coaxing required.
 
-For more information about themes in Omarchy, see the [official manual](https://learn.omacom.io/2/the-omarchy-manual/52/themes).
+For those who enjoy reading manuals (a rare breed, but admirable), see the [official documentation](https://learn.omacom.io/2/the-omarchy-manual/52/themes).
 
 ## License
 
