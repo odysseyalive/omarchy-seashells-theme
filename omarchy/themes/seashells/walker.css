@@ -1,31 +1,6 @@
-* {
-    color: #deb88d;
-}
-
-#window {
-    background-color: rgba(8, 19, 26, 0.95);
-}
-
-#box {
-    border: 2px solid #50a3b5;
-    border-radius: 10px;
-}
-
-#input {
-    background-color: #17384c;
-    border: 1px solid #424b52;
-    color: #deb88d;
-}
-
-#item {
-    background-color: transparent;
-}
-
-#item:selected {
-    background-color: #1d4850;
-    color: #fee3cd;
-}
-
-#item:hover {
-    background-color: #1e4862;
-}
+@define-color selected-text #50a3b5;
+@define-color text #deb88d;
+@define-color base #08131a;
+@define-color border #50a3b5;
+@define-color foreground #deb88d;
+@define-color background #08131a;
