@@ -72,47 +72,40 @@ download_backgrounds() {
     local theme=$1
     local bg_count=0
     local bg_fail=0
+    local backgrounds_dir="${TARGET_DIR}/${theme}/backgrounds"
 
-    # Try to download background images (numbered 1-9)
-    for i in {1..9}; do
-        # Try both jpg and png extensions
-        for ext in jpg png; do
-            local bg_list_url="${REPO_URL}/omarchy/themes/${theme}/backgrounds/"
+    # Clean existing background images
+    if [ -d "$backgrounds_dir" ]; then
+        rm -rf "$backgrounds_dir"
+    fi
+    mkdir -p "$backgrounds_dir"
 
-            # Use GitHub API to list files in backgrounds directory
-            # For simplicity, we'll try downloading common numbered backgrounds
-            local bg_file="${i}-"
+    # Use GitHub API to list files in the backgrounds directory
+    local api_url="https://api.github.com/repos/odysseyalive/omarchy-seashells-theme/contents/omarchy/themes/${theme}/backgrounds"
 
-            # We need to know the actual filenames. For now, hardcode known backgrounds
-            case "$theme" in
-                "seashells")
-                    if [ $i -eq 1 ]; then
-                        if download_file "$theme" "1-chimney-rock.jpg" "backgrounds/"; then
-                            ((bg_count++)) || true
-                        else
-                            ((bg_fail++)) || true
-                        fi
-                        break 2  # Exit both loops after downloading
-                    fi
-                    ;;
-                "seashells-light")
-                    if [ $i -eq 1 ]; then
-                        if download_file "$theme" "1-rainbow-river.jpg" "backgrounds/"; then
-                            ((bg_count++)) || true
-                        else
-                            ((bg_fail++)) || true
-                        fi
-                        break 2  # Exit both loops after downloading
-                    fi
-                    ;;
-            esac
+    # Fetch the list of files from GitHub API
+    local bg_files=$(curl -fsSL "$api_url" 2>/dev/null | grep -o '"name": *"[^"]*\.\(jpg\|jpeg\|png\|gif\|webp\)"' | sed 's/"name": *"\([^"]*\)"/\1/g')
 
-            # Exit loops if we've tried all backgrounds
-            [ $i -gt 1 ] && break 2
-        done
-    done
+    if [ -z "$bg_files" ]; then
+        echo -e "  ${YELLOW}No background images found or API request failed${NC}"
+        return 0
+    fi
+
+    # Download each background image
+    while IFS= read -r bg_file; do
+        if [ -n "$bg_file" ]; then
+            if download_file "$theme" "$bg_file" "backgrounds/"; then
+                ((bg_count++)) || true
+            else
+                ((bg_fail++)) || true
+            fi
+        fi
+    done <<< "$bg_files"
 
     echo -e "  Backgrounds: ${bg_count} downloaded"
+    if [ $bg_fail -gt 0 ]; then
+        echo -e "  ${YELLOW}Warning: ${bg_fail} background(s) failed to download${NC}"
+    fi
     return 0
 }
 
