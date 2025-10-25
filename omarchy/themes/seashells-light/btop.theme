@@ -2,7 +2,7 @@
 # By: Based on SeaShells_Light colorscheme
 
 # Main bg
-theme[main_bg]="#fef9f2"
+theme[main_bg]="#ebe1d3"
 
 # Main text color
 theme[main_fg]="#2d3339"
@@ -14,7 +14,7 @@ theme[title]="#2d3339"
 theme[hi_fg]="#50a3b5"
 
 # Background color of selected item in processes box
-theme[selected_bg]="#e6f3fa"
+theme[selected_bg]="#d8eaf5"
 
 # Foreground color of selected item in processes box
 theme[selected_fg]="#1d4850"
