@@ -1,16 +1,1 @@
-{
-  "theme": {
-    "colors": {
-      "frame": [254, 249, 242],
-      "toolbar": [240, 244, 247],
-      "tab_text": [45, 51, 57],
-      "tab_background_text": [138, 155, 168],
-      "bookmark_text": [45, 51, 57],
-      "ntp_background": [254, 249, 242],
-      "ntp_text": [45, 51, 57]
-    },
-    "tints": {
-      "buttons": [0.5, 0.5, 0.5]
-    }
-  }
-}
+254,249,242

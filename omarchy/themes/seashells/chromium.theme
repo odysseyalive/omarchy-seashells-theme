@@ -1,16 +1,1 @@
-{
-  "theme": {
-    "colors": {
-      "frame": [8, 19, 26],
-      "toolbar": [23, 56, 76],
-      "tab_text": [222, 184, 141],
-      "tab_background_text": [66, 75, 82],
-      "bookmark_text": [222, 184, 141],
-      "ntp_background": [8, 19, 26],
-      "ntp_text": [222, 184, 141]
-    },
-    "tints": {
-      "buttons": [0.5, 0.5, 0.5]
-    }
-  }
-}
+8,19,26

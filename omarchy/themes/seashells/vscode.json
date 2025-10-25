@@ -1,35 +1,4 @@
 {
-  "workbench.colorCustomizations": {
-    "editor.background": "#08131a",
-    "editor.foreground": "#deb88d",
-    "editorCursor.foreground": "#fba02f",
-    "editor.selectionBackground": "#1e4862",
-    "editor.lineHighlightBackground": "#17384c",
-    "editorLineNumber.foreground": "#424b52",
-    "editorLineNumber.activeForeground": "#deb88d",
-    "sideBar.background": "#0a1620",
-    "sideBar.foreground": "#deb88d",
-    "activityBar.background": "#0a1620",
-    "activityBar.foreground": "#50a3b5",
-    "statusBar.background": "#1d4850",
-    "statusBar.foreground": "#deb88d",
-    "terminal.background": "#08131a",
-    "terminal.foreground": "#deb88d",
-    "terminal.ansiBlack": "#17384c",
-    "terminal.ansiRed": "#d05023",
-    "terminal.ansiGreen": "#027b9b",
-    "terminal.ansiYellow": "#fba02f",
-    "terminal.ansiBlue": "#1d4850",
-    "terminal.ansiMagenta": "#68d3f0",
-    "terminal.ansiCyan": "#50a3b5",
-    "terminal.ansiWhite": "#deb88d",
-    "terminal.ansiBrightBlack": "#424b52",
-    "terminal.ansiBrightRed": "#d38677",
-    "terminal.ansiBrightGreen": "#618c98",
-    "terminal.ansiBrightYellow": "#fdd29e",
-    "terminal.ansiBrightBlue": "#1abcdd",
-    "terminal.ansiBrightMagenta": "#bbe3ee",
-    "terminal.ansiBrightCyan": "#86abb3",
-    "terminal.ansiBrightWhite": "#fee3cd"
-  }
+  "name": "SeaShells",
+  "extension": "odysseyalive.seashells-theme"
 }
