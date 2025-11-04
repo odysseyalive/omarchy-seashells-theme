@@ -16,13 +16,13 @@ white = '#0f2838'
 
 # Bright colors
 [colors.bright]
-black = '#7d8891'
+black = '#5a6b75'
 red = '#d38677'
 green = '#618c98'
 yellow = '#fba02f'
 blue = '#1abcdd'
-magenta = '#4a9fb5'
-cyan = '#86abb3'
+magenta = '#2d6870'
+cyan = '#4a7a85'
 white = '#08131a'
 
 [colors.selection]
