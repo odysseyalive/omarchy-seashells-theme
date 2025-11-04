@@ -2,7 +2,7 @@
 # By: Based on SeaShells_Light colorscheme
 
 # Main bg
-theme[main_bg]="#ebe1d3"
+theme[main_bg]="#e0d6c8"
 
 # Main text color
 theme[main_fg]="#0f2838"
