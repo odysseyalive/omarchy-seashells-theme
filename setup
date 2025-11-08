@@ -26,7 +26,6 @@ THEME_FILES=(
     "hyprlock.conf"
     "icons.theme"
     "kitty.conf"
-    "light.mode"
     "mako.ini"
     "neovim.lua"
     "swayosd.css"
@@ -138,6 +137,11 @@ for theme in "${THEMES[@]}"; do
 
     if [ $fail_count -gt 0 ]; then
         echo -e "  ${YELLOW}Warning: ${fail_count} file(s) failed to download${NC}"
+    fi
+
+    # Download light.mode file only for seashells-light theme
+    if [[ "$theme" == "seashells-light" ]]; then
+        download_file "$theme" "light.mode" ""
     fi
 
     # Download background images
