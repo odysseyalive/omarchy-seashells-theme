@@ -26,6 +26,7 @@ THEME_FILES=(
     "hyprlock.conf"
     "icons.theme"
     "kitty.conf"
+    "light.mode"
     "mako.ini"
     "neovim.lua"
     "swayosd.css"
