@@ -28,6 +28,7 @@ THEME_FILES=(
     "kitty.conf"
     "mako.ini"
     "neovim.lua"
+    "preview.png"
     "swayosd.css"
     "vscode.json"
     "walker.css"
