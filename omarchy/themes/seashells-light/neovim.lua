@@ -4,8 +4,7 @@ return {
 		priority = 1000,
 		config = function()
 			require("kitty-themes").setup({
-				-- Configuration options
-				transparent = false,
+				transparent = true,
 				term_colors = true,
 			})
 		end,

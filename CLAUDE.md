@@ -18,55 +18,40 @@ omarchy/themes/
     └── [config files]   # Individual application theme files
 ```
 
-Each theme directory contains identical file types but with different color palettes.
-
-## Theme Files
-
-The repository contains configuration files for:
-- Terminal emulators: `alacritty.toml`, `kitty.conf`, `ghostty.conf`
-- Editors: `vscode.json`, `neovim.lua`
-- Wayland/Hyprland: `hyprland.conf`, `hyprlock.conf`, `waybar.css`, `swayosd.css`
-- System tools: `btop.theme`, `mako.ini`, `walker.css`, `chromium.theme`, `icons.theme`
-
-## Key Color Palettes
-
-**Dark Theme (seashells):**
-- Background: `#08131a` (deep ocean)
-- Foreground: `#deb88d` (warm sandy text)
-- Accent: `#50a3b5` (bright cyan)
-- Cursor: `#fba02f` (orange)
-
-**Light Theme (seashells-light):**
-- Background: `#fef9f2` (soft cream)
-- Foreground: `#2d3339` (dark text)
-- Accent: `#50a3b5` (ocean cyan - shared with dark)
-
 ## Installation
 
-The `setup` script is the primary installation mechanism:
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/odysseyalive/omarchy-seashells-theme/main/setup)"
 ```
 
-This script:
-1. Creates `~/.config/omarchy/themes/` directory
-2. Downloads all theme files for both variants from the GitHub repository
-3. Downloads background images for each theme
-4. Uses cache-busting query parameters (`?cache_bust=$(date +%s)`) to avoid CDN caching issues
+Downloads from: `https://raw.githubusercontent.com/odysseyalive/omarchy-seashells-theme/main`
 
-The script downloads from: `https://raw.githubusercontent.com/odysseyalive/omarchy-seashells-theme/main`
+## Skills Reference
 
-## Configuration Format Patterns
+| Skill | Purpose |
+|-------|---------|
+| `/seashells-theme` | Color palettes, config format patterns, consistency rules |
+| `/awareness-ledger` | Institutional memory — incidents, decisions, patterns |
 
-- **TOML**: Alacritty config uses nested TOML tables (`[colors.primary]`, `[colors.normal]`, `[colors.bright]`)
-- **JSON**: VS Code uses `workbench.colorCustomizations` with editor, terminal, and UI color overrides
-- **Lua**: Neovim config references the `kitty-themes.nvim` plugin and sets colorscheme to "SeaShells"
-- **CSS**: Waybar, Walker, and SwayOSD use standard CSS styling
-- **Conf files**: Hyprland configs use variable syntax (`$activeBorderColor`) and rgba colors with gradients
-
-## Important Notes
+## Important Rules
 
 - Both theme variants maintain the same file structure and naming conventions
 - The cyan accent color (`#50a3b5`) is consistent across both light and dark themes
+- Themes must only contain color overrides, not full app configs (Omarchy compatibility)
 - Neovim integration depends on the `odysseyalive/kitty-themes.nvim` plugin
-- Background images are stored in each theme's `backgrounds/` subdirectory with descriptive names
+
+## Project Memory
+
+This project uses an awareness ledger for institutional memory.
+
+**Before recommending changes:** During research and planning, check
+`.claude/skills/awareness-ledger/ledger/index.md` for relevant records. If
+matching records exist, read them and factor their warnings, decisions, and
+patterns into your recommendation. Use `/awareness-ledger consult` for full
+agent-assisted analysis when high-risk overlap is detected.
+
+**After resolving issues:** When you encounter bug investigations with root
+causes, architectural decisions with trade-offs, or recurring patterns, ask
+the user if they want to record the knowledge in the awareness ledger. Use
+`/awareness-ledger record [type]` to capture it. Always finish the immediate
+work first — suggest capture after, not during.

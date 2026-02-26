@@ -18,21 +18,16 @@ THEMES=("seashells" "seashells-light")
 
 # Theme files to download
 THEME_FILES=(
-    "alacritty.toml"
     "btop.theme"
-    "chromium.theme"
+    "colors.toml"
     "ghostty.conf"
     "hyprland.conf"
     "hyprlock.conf"
     "icons.theme"
     "kitty.conf"
-    "mako.ini"
     "neovim.lua"
     "preview.png"
-    "swayosd.css"
     "vscode.json"
-    "walker.css"
-    "waybar.css"
 )
 
 echo -e "${GREEN}╔════════════════════════════════════════╗${NC}"
