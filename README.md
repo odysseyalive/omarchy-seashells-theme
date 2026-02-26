@@ -65,3 +65,5 @@ Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for detai
 ## Credits
 
 Based on the SeaShells colorscheme from [iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes).
+
+Built with [Claude Enforcer](https://github.com/odysseyalive/claude-enforcer).
