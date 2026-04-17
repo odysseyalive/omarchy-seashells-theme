@@ -1,6 +1,6 @@
 # Awareness Ledger Index
 
-*Auto-generated. Last updated: 2026-02-26*
+*Auto-generated. Last updated: 2026-04-16*
 
 ## By Tag
 
@@ -9,6 +9,7 @@
 
 ### kitty.conf
 - INC-2025-11-08-kitty-tab-foreground — Kitty inactive tab unreadable (resolved)
+- INC-2026-04-16-light-kitty-tab-placement — Off-palette tab/border values in seashells-light (resolved)
 - PAT-2026-02-26-clarity-iteration — Light theme requires multiple clarity iterations (active)
 
 ### walker.css
@@ -25,7 +26,11 @@
 ### color-palette
 - PAT-2026-02-26-shared-accent-color — #50a3b5 shared across both themes (active)
 
+### color-placement
+- INC-2026-04-16-light-kitty-tab-placement — Off-palette tab/border values in seashells-light (resolved)
+
 ### seashells-light
+- INC-2026-04-16-light-kitty-tab-placement — Off-palette tab/border values in seashells-light (resolved)
 - PAT-2026-02-26-clarity-iteration — Light theme requires multiple clarity iterations (active)
 
 ### both-themes
@@ -43,6 +48,7 @@
 - DEC-2025-10-25-standardized-settings — Minimal color-only overrides for Omarchy compatibility [compatibility, both-themes]
 
 ### Resolved
+- INC-2026-04-16-light-kitty-tab-placement — Off-palette tab/border drift in seashells-light/kitty.conf [kitty.conf, seashells-light]
 - INC-2025-12-24-lazyvim-tab-bar — LazyVim tab bar transparency fix [neovim.lua]
 - INC-2025-11-08-kitty-tab-foreground — Kitty inactive tab foreground unreadable [kitty.conf]
 - INC-2025-10-24-menu-transparency — Walker menu transparency fix [walker.css]
@@ -53,6 +59,7 @@
 
 - INC-2025-12-24-lazyvim-tab-bar -> related to PAT-2026-02-26-clarity-iteration
 - INC-2025-11-08-kitty-tab-foreground -> related to PAT-2026-02-26-clarity-iteration
+- INC-2026-04-16-light-kitty-tab-placement -> related to INC-2025-11-08-kitty-tab-foreground, PAT-2026-02-26-clarity-iteration
 - INC-2025-10-24-menu-transparency -> related to DEC-2025-10-25-standardized-settings
 - INC-2025-12-24-light-mode-setup -> related to DEC-2025-10-25-standardized-settings
 - PAT-2026-02-26-shared-accent-color -> related to DEC-2025-10-25-standardized-settings
@@ -61,7 +68,7 @@
 
 | Type | Total | Active | Resolved | Deprecated |
 |------|-------|--------|----------|------------|
-| Incidents | 5 | 0 | 5 | 0 |
+| Incidents | 6 | 0 | 6 | 0 |
 | Decisions | 1 | 1 | 0 | 0 |
 | Patterns | 2 | 2 | 0 | 0 |
 | Flows | 0 | 0 | 0 | 0 |
