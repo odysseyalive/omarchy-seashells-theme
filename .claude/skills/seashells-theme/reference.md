@@ -79,6 +79,8 @@
 | Cyan | `#3a6a75` |
 | White | `#08131a` |
 
+**Light-theme palette note:** Colors are synced with the `SeaShells_Light.vim` nvim colorscheme for visual consistency across terminal and editor.
+
 ---
 
 ## Shared Colors (same in both themes)
@@ -86,11 +88,10 @@
 | Role | Hex | Significance |
 |------|-----|-------------|
 | Accent/Cyan | `#50a3b5` | SeaShells identity color — DO NOT diverge |
-| Red | `#d05023` | Error/danger — same in both |
 | Green | `#027b9b` | Success/info — same in both |
 | Blue | `#2d6870` | Active elements — same in both |
-| Bright Red | `#d38677` | Soft red — same in both |
-| Bright Green | `#618c98` | Muted teal — same in both |
+
+**Light-specific colors:** Light theme uses the same warm coral/amber tones as dark (`#d05023`, `#d88821`) for visual consistency with the nvim colorscheme.
 
 ---
 
@@ -156,7 +157,7 @@ Why each override file is kept instead of relying on its template:
 | `ghostty.conf` | Uses Ghostty's theme registry (`theme = SeaShells`); template generates redundant full palette. |
 | `btop.theme` | Hand-tuned values: custom `selected_bg`/`selected_fg`, uniform box outlines, simplified gradients. |
 | `hyprland.conf` | Uses `rgba()` with alpha + dual-color gradient. Template uses `rgb()` with no alpha/gradient. |
-| `hyprlock.conf` | Maps `outer_color` to accent (not foreground). Light uses non-palette background value. |
+| `hyprlock.conf` | Maps `outer_color` to accent (not foreground). |
 
 ---
 
