@@ -79,7 +79,7 @@ Each config file uses a specific format. Match the pattern when editing:
 - **Lua** (neovim.lua): References `kitty-themes.nvim` plugin, sets colorscheme to "SeaShells", `transparent = true`
 - **Conf** (hyprland.conf): Variable syntax `$activeBorderColor` with rgba colors and gradients
 - **Conf** (hyprlock.conf): Key-value color definitions for lock screen
-- **Conf** (kitty.conf, ghostty.conf): Key-value color definitions
+- **Conf** (kitty.conf): Key-value color definitions
 - **INI** (btop.theme): Key-value with section headers, hand-tuned selection/gradient values
 
 ## Project Memory

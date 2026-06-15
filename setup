@@ -20,7 +20,6 @@ THEMES=("seashells" "seashells-light")
 THEME_FILES=(
     "btop.theme"
     "colors.toml"
-    "ghostty.conf"
     "hyprland.conf"
     "hyprlock.conf"
     "icons.theme"

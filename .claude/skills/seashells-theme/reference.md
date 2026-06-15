@@ -103,7 +103,6 @@ Both `omarchy/themes/seashells/` and `omarchy/themes/seashells-light/` contain:
 |------|--------|-------|------|
 | `btop.theme` | INI | System monitor colors | Override |
 | `colors.toml` | TOML | 18-value palette for template system | Template source |
-| `ghostty.conf` | Conf | Terminal colors | Override |
 | `hyprland.conf` | Conf | Window borders, gaps | Override |
 | `hyprlock.conf` | Conf | Lock screen colors | Override |
 | `icons.theme` | INI | Icon theme pointer | Non-templatable |
@@ -120,6 +119,7 @@ Light theme additionally has: `light.mode` (marker file — downloaded only for 
 |------|-------|
 | `alacritty.toml` | Terminal colors (search, vi_mode, footer_bar) |
 | `chromium.theme` | Browser theme |
+| `ghostty.conf` | Terminal colors (full palette from `colors.toml`) |
 | `keyboard.rgb` | Keyboard RGB lighting |
 | `mako.ini` | Notification colors |
 | `obsidian.css` | Obsidian note-taking app |
@@ -154,7 +154,6 @@ Why each override file is kept instead of relying on its template:
 | File | Why override is needed |
 |------|----------------------|
 | `kitty.conf` | Template lacks `url_color`, custom tab styling, `inactive_border_color`. Uses `#2d6870` for active tab BG (not accent). |
-| `ghostty.conf` | Uses Ghostty's theme registry (`theme = SeaShells`); template generates redundant full palette. |
 | `btop.theme` | Hand-tuned values: custom `selected_bg`/`selected_fg`, uniform box outlines, simplified gradients. |
 | `hyprland.conf` | Uses `rgba()` with alpha + dual-color gradient. Template uses `rgb()` with no alpha/gradient. |
 | `hyprlock.conf` | Maps `outer_color` to accent (not foreground). |
